@@ -1,0 +1,46 @@
+// Replace letters
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// Encode symbols
+@function url-encode($string) {
+    $map: ( "%": "%25", "<": "%3C", ">": "%3E", " ": "%20", "!": "%21", "*": "%2A", "'": "%27", '"': "%22", "(": "%28", ")": "%29", ";": "%3B", ":": "%3A", "@": "%40", "&": "%26", "=": "%3D", "+": "%2B", "$": "%24", ",": "%2C", "/": "%2F", "?": "%3F", "#": "%23", "[": "%5B", "]": "%5D" );
+
+    $new: $string;
+
+    @each $search, $replace in $map {
+        $new: str-replace($new, $search, $replace);
+    }
+
+    @return $new;
+}
+//
+@function svg-background-image($string) {
+    @return url('data:image/svg+xml,#{url-encode($string)}');
+}
+
+
+.comp-select-01 {
+    width: 100%;
+    height: 56px;
+    padding-left: 16px;
+    margin-bottom: 24px;
+    border: 1px solid #d7d5e1;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #76758f;
+    background-image: svg-background-image(
+        '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M16.0001 17.5857L21.293 12.2928L22.7072 13.7071L16.0001 20.4142L9.29297 13.7071L10.7072 12.2928L16.0001 17.5857Z" fill="#4E4C69"/> </svg> '
+    );
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) 50%;
+}
+

@@ -1,0 +1,18 @@
+header {
+  
+    .h-title {
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: normal;
+        line-height: normal;
+        color: #1b1d21;
+    }
+
+    .content-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 110px;
+        border-bottom: 1px solid rgba(34, 31, 68, 0.04);
+    }
+}

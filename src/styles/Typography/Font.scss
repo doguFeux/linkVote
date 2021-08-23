@@ -1,0 +1,38 @@
+
+@mixin prm-font-face-mixin-2 {
+    font-family: 'Sofia Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: normal;
+    line-height: normal;
+}
+
+@font-face {
+    @include prm-font-face-mixin-2;
+    src: url( '/src/Files/Sofia-Pro/SofiaPro-Bold.woff');
+    font-weight: 900;
+}
+
+@font-face {
+    @include prm-font-face-mixin-2;
+    src: url('/src/Files/Sofia-Pro/SofiaPro-SemiBold.woff');
+    font-weight: 600;
+}
+
+@font-face {
+    @include prm-font-face-mixin-2;
+    src: url('/src/Files/Sofia-Pro/SofiaPro-Light.woff');
+    font-weight: 500;
+}
+
+@font-face {
+    @include prm-font-face-mixin-2;
+    src: url('/src/Files/Sofia-Pro/SofiaPro-Medium.woff');
+}
+
+/* Base font syles */
+
+body {
+    @include prm-font-face-mixin-2;
+}

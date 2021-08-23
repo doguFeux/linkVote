@@ -1,0 +1,32 @@
+.comp-pagination-01 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    background: rgba(236, 234, 250, 0.48);
+    border-radius: 48px;
+
+    a{
+        display: flex;
+        align-items: center;
+    }
+
+    >.c-item-01 {
+        width: 40px;
+        justify-content: center;
+        height: 40px;
+        text-align: center;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: #4e4c69;
+        text-decoration: none;
+
+        &.on {
+            background: #ffffff;
+            box-shadow: 0px 6px 16px -4px rgba(34, 31, 68, 0.16);
+            border-radius: 50%;
+            color: #E94034;
+        }
+    }
+}

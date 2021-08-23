@@ -1,0 +1,97 @@
+.c-lcart-01 {
+    display: flex;
+    height: 96px;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 8px 96px 8px 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    .c-item-01 {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 24px;
+        background-color: #eceafa;
+        border-radius: 16px;
+        border: 1px solid rgba(118, 117, 143, 0.72);
+
+        .c-unit-01 {
+            margin-bottom: 4px;
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 28px;
+            text-transform: uppercase;
+        }
+        .c-unit-02 {
+            font-size: 16px;
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+    }
+    .c-item-02 {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-weight: normal;
+        font-size: 42px;
+        line-height: 42px;
+        color: #221f44;
+
+        .c-unit-01 {
+            margin-bottom: 4px;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 24px;
+            text-transform: uppercase;
+        }
+        .c-unit-02 {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 16px;
+            color: #76758f;
+        }
+        .c-unit-03 {
+            margin-top: auto;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 16px;
+            color: #76758f;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .delete-icon {
+        display: none;
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        svg {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    &:after {
+        content: "";
+        border: 1px solid #fff;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+    }
+    &:hover {
+        &:after {
+            background-color: #f7f7fc;
+            border-color: #eceafa;
+            z-index: -1;
+        }
+        .delete-icon {
+            display: block;
+        }
+    }
+}
